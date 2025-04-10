@@ -1025,7 +1025,9 @@ S2.define('select2/results',[
     option.classList.add('select2-results__option--selectable');
 
     var attrs = {
-      'role': 'option'
+      'role': 'option',
+      'tab-index': '0',
+      'aria-label': data.text
     };
 
     var matches = window.Element.prototype.matches ||
@@ -1063,6 +1065,7 @@ S2.define('select2/results',[
     for (var attr in attrs) {
       var val = attrs[attr];
 
+      console.log(attr, val);
       option.setAttribute(attr, val);
     }
 
@@ -1899,6 +1902,11 @@ S2.define('select2/selection/placeholder',[
 
     this.$selection.find('.select2-selection__rendered').attr(
       'title',
+      placeholderTitle
+    );
+
+    this.$selection.find('.select2-selection__rendered').attr(
+      'aria-label',
       placeholderTitle
     );
 

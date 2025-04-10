@@ -34,6 +34,11 @@ define([
       placeholderTitle
     );
 
+    this.$selection.find('.select2-selection__rendered').attr(
+      'aria-label',
+      placeholderTitle
+    );
+
     return $placeholder;
   };
 

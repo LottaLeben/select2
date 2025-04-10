@@ -174,7 +174,9 @@ define([
     option.classList.add('select2-results__option--selectable');
 
     var attrs = {
-      'role': 'option'
+      'role': 'option',
+      'tab-index': '0',
+      'aria-label': data.text
     };
 
     var matches = window.Element.prototype.matches ||
@@ -212,6 +214,7 @@ define([
     for (var attr in attrs) {
       var val = attrs[attr];
 
+      console.log(attr, val);
       option.setAttribute(attr, val);
     }
 
