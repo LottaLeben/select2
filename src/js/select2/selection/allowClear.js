@@ -119,7 +119,6 @@ define([
 
     $remove.on('keydown', function (evt) {
       if (evt.key === 'Enter') {
-        console.log('Clear 2', $remove);
         evt.preventDefault();
         self._handleClear(evt);
       }
