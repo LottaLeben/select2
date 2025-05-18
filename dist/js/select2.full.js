@@ -2052,7 +2052,6 @@ S2.define('select2/selection/allowClear',[
 
     $remove.on('keydown', function (evt) {
       if (evt.key === 'Enter') {
-        console.log('Clear 2', $remove);
         evt.preventDefault();
         self._handleClear(evt);
       }
