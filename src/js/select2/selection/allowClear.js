@@ -116,7 +116,7 @@ define([
     Utils.StoreData($remove[0], 'data', data);
 
     $remove.on('keydown', function (evt) {
-      if (evt.which === KEYS.ENTER || evt.which === KEYS.SPACE) {
+      if (evt.key === 'Enter') {
         evt.preventDefault();
         $remove.click();
       }
