@@ -106,8 +106,8 @@ define([
     var removeAll = this.options.get('translations').get('removeAllItems');
 
     var $remove = $(
-      '<button type="button" class="select2-selection__clear" tabindex="-1">' +
-        '<span aria-hidden="true">&times;</span>' +
+      '<button type="button" class="select2-selection__clear">' +
+        '<span>&times;</span>' +
       '</button>'
     );
     $remove.attr('title', removeAll());
