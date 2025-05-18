@@ -1064,8 +1064,6 @@ S2.define('select2/results',[
 
     for (var attr in attrs) {
       var val = attrs[attr];
-
-      console.log(attr, val);
       option.setAttribute(attr, val);
     }
 
@@ -2051,7 +2049,8 @@ S2.define('select2/selection/allowClear',[
     Utils.StoreData($remove[0], 'data', data);
 
     $remove.on('keydown', function (evt) {
-      if (evt.which === KEYS.ENTER || evt.which === KEYS.SPACE) {
+      if (evt.key === 'Enter') {
+        console.log('Clear', $remove);
         evt.preventDefault();
         $remove.click();
       }
