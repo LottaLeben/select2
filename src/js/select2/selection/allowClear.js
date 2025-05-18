@@ -115,6 +115,13 @@ define([
     $remove.attr('aria-describedby', selectionId);
     Utils.StoreData($remove[0], 'data', data);
 
+    $remove.on('keydown', function (evt) {
+      if (evt.which === KEYS.ENTER || evt.which === KEYS.SPACE) {
+        evt.preventDefault();
+        $remove.click();
+      }
+    });
+
     this.$selection.prepend($remove);
     this.$selection[0].classList.add('select2-selection--clearable');
   };
