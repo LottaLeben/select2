@@ -213,8 +213,6 @@ define([
 
     for (var attr in attrs) {
       var val = attrs[attr];
-
-      console.log(attr, val);
       option.setAttribute(attr, val);
     }
 
