@@ -90,6 +90,8 @@ define([
   };
 
   AllowClear.prototype.update = function (decorated, data) {
+    var self = this;
+
     decorated.call(this, data);
 
     this.$selection.find('.select2-selection__clear').remove();
@@ -117,9 +119,9 @@ define([
 
     $remove.on('keydown', function (evt) {
       if (evt.key === 'Enter') {
-        console.log('Clear', $remove);
+        console.log('Clear 2', $remove);
         evt.preventDefault();
-        $remove.click();
+        self._handleClear(evt);
       }
     });
 

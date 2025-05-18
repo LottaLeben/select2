@@ -2023,6 +2023,8 @@ S2.define('select2/selection/allowClear',[
   };
 
   AllowClear.prototype.update = function (decorated, data) {
+    var self = this;
+
     decorated.call(this, data);
 
     this.$selection.find('.select2-selection__clear').remove();
@@ -2050,9 +2052,9 @@ S2.define('select2/selection/allowClear',[
 
     $remove.on('keydown', function (evt) {
       if (evt.key === 'Enter') {
-        console.log('Clear', $remove);
+        console.log('Clear 2', $remove);
         evt.preventDefault();
-        $remove.click();
+        self._handleClear(evt);
       }
     });
 
